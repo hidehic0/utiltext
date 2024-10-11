@@ -6,5 +6,8 @@ collections.deque
 リストとの違い
 popがO(1)でできるため軽い
 
+欠点
+popにインデックスが指定できない
+
 インポート
 from collections import deque
