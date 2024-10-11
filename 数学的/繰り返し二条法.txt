@@ -1,0 +1,28 @@
+繰り返し二条法
+
+用途
+a^30を超えるべき乗の計算
+めっちゃ早い
+
+O(log n)最強
+
+テンプレ
+------------------------------
+def pow(x,n,t=1):
+    if t == 1:
+    
+        ans = 1
+        while n:
+            if n%2:
+                ans = (ans*x)
+            x=(x*x)
+            n>>=1
+        return ans 
+    ans = 1
+    while n:
+        if n%2:
+            ans = (ans*x)%t
+        x=(x*x)%t
+        n>>=1
+    return ans 
+------------------------------

@@ -1,0 +1,37 @@
+UnionFind
+
+用途
+経路圧縮とunion by sizeを使った
+O(a(n))の最強速度
+汎用できる
+
+
+
+テンプレ
+--------------------------------------------
+class UnionFind:
+    # init
+    def __init__(self, n:int): # n は要素数
+        self.n: int = n
+        self.par = [-1] * (n + 1)
+        self.size = [1] * (n + 1)
+    # rootを確認
+    def root(self, x: int) -> int:
+        while self.par[x] != -1:
+            x: int = self.par[x]
+        return x
+    # uとvを統合
+    def unite(self, u: int, v: int):
+        rootu = self.root(u)
+        rootv = self.root(v)
+        if rootu != rootv:
+            if self.size[rootu] < self.size[rootv]:
+                self.par[rootu] = rootv
+                self.size[rootv] += self.size[rootu]
+            else:
+                self.par[rootv] = rootu
+                self.size[rootu] += self.size[rootv]
+    # 同じ連結成分か確認
+    def same(self, u, v):
+        return self.root(u) == self.root(v)
+--------------------------------------------

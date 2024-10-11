@@ -1,0 +1,10 @@
+collections.deque
+
+用途
+スタックとキュー
+
+リストとの違い
+popがO(1)でできるため軽い
+
+インポート
+from collections import deque
