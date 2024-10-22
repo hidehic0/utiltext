@@ -1,0 +1,18 @@
+二項係数
+
+用途
+なんやかんや使う
+
+注意
+繰り返し二乗法使うこと
+
+計算量
+O(N+log mod)
+
+テンプレ
+
+mod = 1000000007
+a = factorial(n) % mod
+b = (factorial(r) * factorial(n - r)) % mod
+print((a * pow(b, mod - 2, mod)) % mod)
+
